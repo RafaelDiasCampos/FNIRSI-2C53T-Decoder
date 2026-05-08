@@ -58,7 +58,7 @@ python decoder.py capture.bin -v 0.5 -t 20us
 Plot waveform:
 
 ```bash
-python decoder.py capture.bin -v 500mV -t 100us -w
+python decoder.py capture.bin -v 0.5 -t 100us -w
 ```
 
 Analyze signal:
@@ -87,7 +87,8 @@ Manual analysis on the binary format used by the FNIRSI 2C53T indicates the foll
 | ------- | ------- | ------------------------------- |
 | `0x000` | `0x12D` | Channel 1 samples (301 samples) |
 | `0x12D` | `0x12D` | Channel 2 samples (301 samples) |
-| `0x25A` | `0x01`  | Channels turned on (Bit 1 -> Channel 1, Bit 2 -> Channel 2)|
+| `0x25A` | `0x01`  | Channel enabled flags (Bit 1 -> Channel 1, Bit 2 -> Channel 2)|
 | `0x25B` | `0x04`  | Unknown purpose (0x0000012D)                          |
 
 Each channel sample is represented by a single unsigned byte, with a value between `0x1C` and `0xE4`.
+This gives an effective range of `200` steps, instead of the expected `256`.

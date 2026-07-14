@@ -1,6 +1,6 @@
 # FNIRSI 2C53T Waveform Decoder
 
-A Python utility for decoding and analyzing `.bin` waveform files exported by the FNIRSI 2C53T portable oscilloscope.
+A Python utility for decoding and analyzing `.bin` waveform files exported by the FNIRSI 2C53T portable oscilloscope. These files are saved to the SD card when taking a screenshot, in addition to the BMP image file.
 
 ## Features
 
